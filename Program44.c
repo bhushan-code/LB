@@ -63,8 +63,8 @@ int main()
 |Enter the number : 5
 |5 is not divisible by 3
 |./Myexe
-|Enter the number : 8
-|8 is not divisible by 3
+|Enter the number : 9
+|8 is  divisible by 3
 |________________________________________________
 
 */

@@ -1,27 +1,21 @@
-//Problem - take number from user and check whether it is divisiible by 5 or not
+//Problem - take number from user and check whether it is divisiible by 3 and 5 both
 
 //Algorthm
 /*
     START
-        take number from user
-        write the function for checking number
-        find remender 
 
     STOP
 */
-
-
 
  
 #include<stdio.h>
 #include<stdbool.h>
 
-bool CheckDivisible(int iNo)                        //from line 43 we get (25)
+bool CheckDivisible(int iNo)                        
 {
-    int iResult = 0;
-    iResult = iNo % 5;
+    
 
-    if(iResult == 0)
+    if(((iNo % 3) == 0) && ((iNo % 5) == ))
         {
             return true;
         }
@@ -40,15 +34,15 @@ int main()
     printf("Enter the number :");
     scanf("%d",&iValue);
 
-    bFlag = CheckDivisible(iValue);                     // goes to line 19
+    bFlag = CheckDivisible(iValue);                   
 
     if(bFlag == true)
         {
-            printf("%d is divisible by 5 \n", iValue);
+            printf("%d is divisible by 3 and 5\n", iValue);
         }
     else
         {
-            printf("%d is not divisible by 5 \n", iValue);
+            printf("%d is not divisible by 3 or 5\n", iValue);
 
         }
     return 0;
@@ -63,11 +57,11 @@ int main()
 |_______________________________________________
 |gcc Program.c -o Myexe
 |./Myexe
-|Enter the number : 5
-|5 is not divisible by 5
+|Enter the number : 15
+|15 is not divisible by 3 and 5
 |./Myexe
 |Enter the number : 8
-|8 is not divisible by 5
+|8 is  not divisible by 3 and 5
 |________________________________________________
 
 */
