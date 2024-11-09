@@ -1,12 +1,21 @@
 //Problem on N numbers
 
 #include<stdio.h>
+void Display(int *ptr)
+{
+    printf("Values of the array are :\n");
+    int iCnt = 0;
+    for(iCnt = 0; iCnt <= 3; iCnt++)
+    {
+        printf("%d\n",*ptr);
+        ptr++;
+    }
+}
 
 int main()
 {
     int Arr[4];
     int iCnt = 0;
-    int iSum = 0;
 
     printf("Please enter the value : \n");
 
@@ -14,13 +23,8 @@ int main()
     {
         scanf("%d",&Arr[iCnt]);
     }
-
-    for(iCnt = 0; iCnt <= 3; iCnt++)
-    {
-        iSum = iSum + Arr[iCnt]; 
-    }
     
-    printf("Values from the array are : %d\n",iSum);
+    Display(Arr);           //Display(100)
 
     return 0;
 }
