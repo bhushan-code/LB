@@ -31,3 +31,11 @@ int main()
 
     return 0;
 }
+
+/*
+    Step 1 : Accept the number of element form user;
+    Step 2 : Allocate the memory dynamically;
+    Step 3 : Accept the elements and store into the dyanmic memory;
+    Step 4 : Perform the operations (Logic);
+    Step 5 ; Deallocate the memory;
+*/
