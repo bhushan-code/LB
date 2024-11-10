@@ -1,29 +1,25 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void AdditionEvenOdd(int Arr[], int iSize)
+int Frequency(int Arr[], int iSize)
 {
-    int iSumEven = 0, iSumOdd = 0, iCnt = 0;
+    int iFreuency = 0, iCnt = 0;
 
     for(iCnt = 0; iCnt < iSize; iCnt++)
     {
-        if(Arr[iCnt]%2 == 0)
+        if(Arr[iCnt] == 10)
         {
-            iSumEven = iSumEven + Arr[iCnt];
-        }
-        else
-        {
-            iSumOdd = iSumOdd + Arr[iCnt];
+            iFreuency++;
         }
     }
-    printf("Addition of Even elemet : %d\n",iSumEven);
-    printf("Addition of Odd elemet : %d\n",iSumOdd);
+    return iFreuency;
+    
 }
 
 int main()
 {
     int *ptr = NULL;
-    int iLength = 0, iCnt = 0;
+    int iLength = 0, iCnt = 0, iRet = 0;
 
     printf("Enter number of Element : \n");
     scanf("%d",&iLength);
@@ -37,11 +33,10 @@ int main()
         scanf("%d",&ptr[iCnt]);
     }
 
-    AdditionEvenOdd(ptr,iLength);
+    iRet = Frequency(ptr,iLength);
+    printf("Frequency of 10 is : %d\n",iRet);
 
     free(ptr);
 
     return 0;
 }
-
-

@@ -1,29 +1,24 @@
+//no type cast
+
 #include<stdio.h>
 #include<stdlib.h>
 
-void AdditionEvenOdd(int Arr[], int iSize)
+float Average(int Arr[], int iSize)
 {
-    int iSumEven = 0, iSumOdd = 0, iCnt = 0;
+    int iSum = 0, iCnt = 0;
 
     for(iCnt = 0; iCnt < iSize; iCnt++)
     {
-        if(Arr[iCnt]%2 == 0)
-        {
-            iSumEven = iSumEven + Arr[iCnt];
-        }
-        else
-        {
-            iSumOdd = iSumOdd + Arr[iCnt];
-        }
+        iSum = iSum + Arr[iCnt];
     }
-    printf("Addition of Even elemet : %d\n",iSumEven);
-    printf("Addition of Odd elemet : %d\n",iSumOdd);
+    return (iSum/iSize);
 }
 
 int main()
 {
     int *ptr = NULL;
     int iLength = 0, iCnt = 0;
+    float fRet = 0;
 
     printf("Enter number of Element : \n");
     scanf("%d",&iLength);
@@ -37,7 +32,8 @@ int main()
         scanf("%d",&ptr[iCnt]);
     }
 
-    AdditionEvenOdd(ptr,iLength);
+    fRet = Average(ptr,iLength);
+    printf("Average of all the elements is : %f\n",fRet);
 
     free(ptr);
 
