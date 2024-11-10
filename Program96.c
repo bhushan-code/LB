@@ -1,22 +1,16 @@
 
-
 #include<stdio.h>
 #include<stdlib.h>
 
-int Minimum(int Arr[], int iSize)
+void RevDiplay(int Arr[], int iSize)
 {
    int iMin = 0, iCnt = 0;
    iMin = Arr[0];
 
-   for(iCnt = 0; iCnt < iSize; iCnt++)                      //can be iCnt start will 1
+   for(iCnt = (iSize-1); iCnt >= 0; iCnt--)                     
    {
-        if(Arr[iCnt] < iMin)
-        {
-            iMin = Arr[iCnt];
-        }
-
+       printf("%d\n",Arr[iCnt]);
    }
-   return iMin;
 }
 
 int main()
@@ -36,8 +30,7 @@ int main()
         scanf("%d",&ptr[iCnt]);
     }
 
-    iRet = Minimum(ptr,iLength);
-    printf("Min of all the elements is : %d\n",iRet);
+    RevDiplay(ptr,iLength);
 
     free(ptr);
 

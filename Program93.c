@@ -1,4 +1,3 @@
-//no type cast
 
 #include<stdio.h>
 #include<stdlib.h>
