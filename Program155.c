@@ -25,7 +25,7 @@ int main()
     scanf("%[^'\n']s",Arr); 
 
     iRet = Countsmll(Arr);
-    printf("Counte of small letters : %d\n",iRet);
+    printf("Count of small letters : %d\n",iRet);
 
     return 0;
 }
