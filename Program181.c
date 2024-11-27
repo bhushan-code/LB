@@ -10,7 +10,7 @@ void strtoggleX(char *str, char ch)
         {
             *str = *str - 32;
         }
-        else if(*str >= 'A'&& *str <= 'Z')
+        else if(*str >= 'A'&& *str <= 'Z')                      //i found solution
         {
             *str = *str + 32;
         }
