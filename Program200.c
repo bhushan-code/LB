@@ -23,7 +23,6 @@ void Reverse(char *str)
         end--;
     }
 
-
 }
 
 int main()
