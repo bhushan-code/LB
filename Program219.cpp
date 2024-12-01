@@ -30,7 +30,6 @@ int main()
 
     iMark = iMark << (iPos-1)
 
-
     return 0;
 }
 

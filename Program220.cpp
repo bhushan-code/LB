@@ -33,7 +33,7 @@ bool CheckBit(int iNo, int iPos)
     {
         return false;
     }
-    
+
 
 }
 int main()
