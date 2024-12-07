@@ -26,8 +26,6 @@ class Digits
 {
     public void CountDigit(int iNo)
     {
-        int iNo2 = iNo;
-        int iSum = 0;
         int iDigit = 0;
         int iCount[] = {0,0,0,0,0,0,0,0,0,0};
       

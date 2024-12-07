@@ -26,13 +26,10 @@ class Digits
 {
     public void CountDigit(int iNo)
     {
-        int iNo2 = iNo;
-        int iSum = 0;
         int iDigit = 0;
         int iCount[] = {0,0,0,0,0,0,0,0,0,0};
         int i = 0;
-        
-      
+             
 
         while(iNo != 0)
         {            
@@ -46,8 +43,6 @@ class Digits
         {
             System.out.println("Frequency of i is : "+iCount[i]);
         }
-            
-     
 
     }
 }
