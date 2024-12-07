@@ -28,21 +28,18 @@ class Digits
     {
         int iDigit = 0;
         int iCount[] = {0,0,0,0,0,0,0,0,0,0};
-        int i = 0;
-             
+        int i = 0;             
 
         while(iNo != 0)
         {            
             iDigit = iNo % 10;
             iNo = iNo /10;
             iCount[iDigit]++;        
-
         }    
      
         for(i = 0; i<= 9; i++)
         {
             System.out.println("Frequency of i is : "+iCount[i]);
         }
-
     }
 }
