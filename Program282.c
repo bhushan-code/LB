@@ -1,18 +1,18 @@
-//54645
-//5
+//546
+//15
 
 
 #include<stdio.h>
 
-int CountDigitsI(int iNo)
+int SumDigitI(int iNo)
 {
-    int iCount = 0;
+    int iSum = 0;
     while(iNo != 0)
     {
+        iSum = iSum +(iNo % 10);
         iNo = iNo/10;
-        iCount++;
     }
-    return iCount;
+    return iSum;
 }
 
 int main()
@@ -21,7 +21,7 @@ int main()
     printf("Enter the frequency : \n");
     scanf("%d",&iValue);
 
-    iRet = CountDigitsI(iValue);
+    iRet = SumDigitI(iValue);
     
     printf("Count of digit is : %d\n",iRet);
     return 0;
