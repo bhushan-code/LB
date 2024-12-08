@@ -3,7 +3,7 @@
 import java.util.*;
 
 
-class Program251
+class Program252
 {
     public static void main(String A[])
     {
@@ -39,7 +39,10 @@ class Digits
      
         for(i = 0; i<= 9; i++)
         {
+            if(iCount[i] != 0)
+            {
             System.out.println("Frequency of i is : "+iCount[i]);
+            }                
         }
     }
 }
