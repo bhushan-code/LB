@@ -98,7 +98,6 @@ void DeleteFirst(PPNODE head)
         temp = *head;
         *head = (*head)->next;
         free(temp);
-        
     }
 }
 

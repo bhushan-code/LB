@@ -12,7 +12,7 @@ struct node                 //self referancial structure
 int main()
 {
     struct node obj;
-    printf("size of node is : %d",sizeof(obj));
+    printf("size of node is : %ld\n",sizeof(obj));
 
     return 0;
 }
