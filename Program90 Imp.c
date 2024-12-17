@@ -5,23 +5,18 @@
 bool Search(int Arr[], int iSize, int iNo)
 {
     int iFreuency = 0, iCnt = 0;
-
+    bool bCheck = false;
     for(iCnt = 0; iCnt < iSize; iCnt++)
     {
         if(Arr[iCnt] == iNo)
         {
+            bCheck = true;
             break;
         }
       
     }
-    if(iCnt == iSize)
-    {
-        return false;
-    }
-    else
-    {
-        return true;
-    }
+    return bCheck;
+
     
 }
 
