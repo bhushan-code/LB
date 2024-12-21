@@ -11,6 +11,8 @@ struct node                 //self referancial structure
 
 int main()
 {
+    struct node *first = NULL;
+
     struct node obj1;
     struct node obj2;
     struct node obj3;
@@ -24,9 +26,7 @@ int main()
     obj2.next = &obj3;
     obj3.next = NULL;
     
-    printf("Value is : %d\n",ptr->data);
-
-    printf("Valur is : %d\n",obj.data);
+    first = &obj1;
 
     return 0;
 }

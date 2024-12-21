@@ -101,6 +101,7 @@ void DeleteFirst(PPNODE head)
     }
 }
 
+
 int main()
 {
     PNODE first = NULL;

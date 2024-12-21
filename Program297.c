@@ -24,9 +24,6 @@ int main()
     obj2.next = &obj3;
     obj3.next = NULL;
     
-    printf("Value is : %d\n",ptr->data);
-
-    printf("Valur is : %d\n",obj.data);
 
     return 0;
 }
