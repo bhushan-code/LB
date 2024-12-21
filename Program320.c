@@ -37,6 +37,32 @@ void InsertFirst(PPNODE head, int no)
 
 }
 
+void InsertLast(PPNODE head, int no)
+{
+    PNODE newn = NULL;
+    PNODE temp = NULL;
+    newn = (PNODE)malloc(sizeof(NODE));
+
+    newn->data = no;
+    newn->next = NULL;
+    newn->prev = NULL;                                  //$
+
+    if(*head == NULL)
+    {
+        *head = newn; 
+    }
+    else
+    {
+        temp = *head;
+        while(temp->next != NULL;)
+        {
+            temp = temp->next;
+        }
+        temp->next = newn;
+        newn->prev = temp;                          //$
+    }
+
+}
 
 
 int main()
