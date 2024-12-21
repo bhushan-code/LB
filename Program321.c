@@ -54,7 +54,7 @@ void InsertLast(PPNODE head, int no)
     else
     {
         temp = *head;
-        while(temp->next != NULL;)
+        while(temp->next != NULL)
         {
             temp = temp->next;
         }
@@ -101,9 +101,20 @@ int Count(PNODE head)
 int main()
 {
     PNODE first = NULL;
+    int iRet = 0;
+
     InsertFirst(&first, 51);
     InsertFirst(&first, 21);
     InsertFirst(&first, 11);
+
+    InsertLast(&first, 101);
+    InsertLast(&first, 111);
+    InsertLast(&first, 121);
+
+    Display(first);
+
+    iRet = Count(first);
+    printf("Number of elements are : %d\n",iRet);
 
     return 0;
 }
