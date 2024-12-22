@@ -21,6 +21,7 @@ class SinglyLL
             head = NULL;
         }
 
+
         void InsertFirst(int no)
         {}
         void InsertLast(int no)
