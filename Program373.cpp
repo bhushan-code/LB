@@ -5,20 +5,19 @@ struct node
 {
     int data;
     struct node *next;
-    struct node *prev;
 };
 
 typedef struct node NODE;
 typedef struct node* PNODE;
 
-class DoublyCL
+class SinglyCL
 {
     public:
         PNODE head;
         PNODE tail;
         int iCount;
 
-        DoublyCL()
+        SinglyCL()
         {
             head = NULL;
             tail = NULL;
@@ -29,17 +28,16 @@ class DoublyCL
         {
             if(head == NULL && tail == NULL)
             {
-                cout<<"LL empty\n";
+                cout<<"LinkedList is empty\n";
                 return;
             }
-            else
-            {
-                do
-                {
-                    cout<<"|"<<head->data<<"|<=>";
-                    head = head->next;
-                }while(head != tail->next);
-            }
+        
+            cout<<"Elements of LinkedList are : \n";
+            do
+            {    
+                cout<<"|"<<head->data<<"|->";
+                head = head->next;
+            }while(head != tail->next);
             cout<<"\n";
         }
 
@@ -54,21 +52,17 @@ class DoublyCL
             newn = new NODE;
             newn->data = no;
             newn->next = NULL;
-            newn->prev = NULL;
 
             if(head == NULL && tail == NULL)
             {
                 head = newn;
-                head->next = newn;
-                tail = newn;
-                head->prev= tail;
+                newn->next = head;
+                tail = head;
             }
             else
             {
                 newn->next = head;
-                head->prev = newn;
                 head = newn;
-                head->prev = tail;
             }
             iCount++;
         }
@@ -79,28 +73,60 @@ class DoublyCL
             newn = new NODE;
             newn->data = no;
             newn->next = NULL;
-            newn->prev = NULL;
 
             if(head == NULL && tail == NULL)
             {
                 head = newn;
-                head->next = newn;
-                tail = newn;
-                head->prev= tail;
+                newn->next = head;
+                tail = head;
             }
             else
             {
                 tail->next = newn;
-                newn->prev = tail;
+                newn->next = head;
                 tail = newn;
-                tail->next = head;
             }
             iCount++;
+
         }
-        
+
+
+        void InsertAtPos(int no, int pos)
+        {
+            
+            if(pos < 0 || pos > iCount+1)
+            {
+                cout<<"invalid position";
+            }
+
+            if(pos == 1)
+            {
+                InsertFirst(no);
+            }
+            else if(pos == iCount+1)
+            {
+                InsertLast(no);
+            }
+            else
+            {
+                PNODE newn = NULL;
+                PNODE temp = head;
+                for(int i = 1; i<pos-1; i++)
+                {
+                    temp = temp->next;
+                }
+                newn = new NODE;
+                newn->data = no;
+                newn->next = NULL;
+
+                newn->next = temp->next;
+                temp->next = newn;   
+                iCount++;        
+            }
+        }
+
         void DeleteFirst()
         {
-            PNODE temp = NULL;
             if(head == NULL && tail == NULL)
             {
                 return;
@@ -113,18 +139,15 @@ class DoublyCL
             }
             else
             {
-                temp = head;
                 head = head->next;
-                head->prev = tail;
+                delete tail->next;
                 tail->next = head;
-                delete temp;
             }
             iCount--;
         }
 
         void DeleteLast()
         {
-            PNODE temp = NULL;
             if(head == NULL && tail == NULL)
             {
                 return;
@@ -137,97 +160,55 @@ class DoublyCL
             }
             else
             {
-                temp = tail;
-                tail = tail->prev;
-                head->prev = tail;               
-                tail->next = head;
-
-                delete temp;
-            }
-            iCount--;
-        }
-        
-        void InsertAtPos(int no, int ipos)
-        {
-            PNODE newn = NULL;
-            PNODE temp = NULL;
-            newn = new NODE;
-            newn->data = no;
-            newn->next = NULL;
-            newn->prev = NULL;
-
-            if(ipos < 0 || ipos > iCount+1)
-            {
-                cout<<"invalid position\n";
-                return;
-            }
-
-            if(ipos == 1)
-            {
-                InsertFirst(no);
-            }
-            else if(ipos == iCount+1)
-            {
-                InsertLast(no);
-            }
-            else
-            {
-                temp = head;
-                int i = 0;
-                for(i = 1; i<ipos-1; i++)
+                PNODE temp = head;
+                while(temp->next != tail)
                 {
                     temp = temp->next;
                 }
-                newn->next = temp->next;
-                temp->next->prev = newn;
-                newn->prev = temp;
-                temp->next =newn;
-                iCount++;
+                delete tail;
+                tail = temp;
+                tail->next = head;
             }
+            iCount--;
         }
-        
-        void DeleteAtPos(int ipos)
-        {
-            PNODE target = NULL;
-            PNODE temp = NULL;
-   
 
-            if(ipos < 0 || ipos > iCount)
+        void DeleteAtPos(int pos)
+        {
+             if(pos < 0 || pos > iCount)
             {
-                cout<<"invalid position\n";
-                return;
+                cout<<"invalid position";
             }
 
-            if(ipos == 1)
+            if(pos == 1)
             {
                 DeleteFirst();
             }
-            else if(ipos == iCount)
+            else if(pos == iCount)
             {
                 DeleteLast();
             }
             else
             {
-                temp = head;
-                int i = 0;
-                for(i = 1; i<ipos-1; i++)
+                PNODE target = NULL;
+                PNODE temp = head;
+                for(int i = 1; i<pos-1; i++)
                 {
                     temp = temp->next;
                 }
 
                 target = temp->next;
                 temp->next = target->next;
-                temp->next->prev = temp;
                 delete target;
-                iCount--;
+
+                iCount--;        
             }
         }
-
 };
+
 
 int main()
 {
-    DoublyCL obj;
+    SinglyCL obj;
     int iRet = 0;
 
     obj.InsertFirst(51);
@@ -259,6 +240,6 @@ int main()
     iRet = obj.Count();
 
     cout<<"Number of elements are : "<<iRet<<"\n";
-    
+
     return 0;
 }
