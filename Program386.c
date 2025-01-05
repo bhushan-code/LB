@@ -60,9 +60,34 @@ void Insert(PPNODE head, int no)
     }
 }
 
-void Search()
+void Inorder(PNODE head)
 {
+    if(head != NULL)
+    {
+        Inorder(head->lchild);
+        printf("%d\n",head->data);
+        Inorder(head->rchild);
+    }
+}
 
+void Preoder(PNODE head)
+{
+    if(head != NULL)
+    {
+        printf("%d\n",head->data);
+        Preoder(head->lchild);
+        Preoder(head->rchild);
+    }
+}
+
+void Postorder(PNODE head)
+{
+    if(head != NULL)
+    {
+        Postorder(head->lchild);
+        Postorder(head->rchild);
+        printf("%d\n",head->data);
+    }
 }
 
 
@@ -72,6 +97,10 @@ int main()
     Insert(&first,51);
     Insert(&first,21);
     Insert(&first,101);
+
+    Inorder(first);
+    Preoder(first);
+    Postorder(first);
 
     return 0;
 }

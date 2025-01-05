@@ -60,9 +60,14 @@ void Insert(PPNODE head, int no)
     }
 }
 
-void Search()
+void Inorder(PNODE head)
 {
-
+    while(head != NULL)
+    {
+        Inorder(head->lchild);
+        printf("%d\n",head->data);
+        Inorder(head->rchild);
+    }
 }
 
 
@@ -72,6 +77,8 @@ int main()
     Insert(&first,51);
     Insert(&first,21);
     Insert(&first,101);
+
+    Inorder(first);
 
     return 0;
 }
