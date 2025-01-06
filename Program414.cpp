@@ -1,3 +1,5 @@
+//Generic Singly Liner LL
+
 #include<iostream>
 using namespace std;
 
